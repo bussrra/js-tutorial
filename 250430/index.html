@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container mt-4">
+
+        <form action="kaydet.php" method="post"> <!--Methotta post gizli ve hızlı  get açık olarak geliyor-->
+           <div class="row g-3">
+            <div class="col-md-6"> <!--Text -->
+                <label for="ad" class="form-label">Ad</label>
+                <input type="text" class="form-control" id="ad" required>
+            </div>
+
+            <div class="col-md-6"> <!--Text-->
+                <label for="soyad" class="form-label">Soyad</label>
+                <input type="text" class="form-control" id="soyad" required>  <!--Requried zorunlu yer doldurma-->
+            </div>
+ 
+            <div class="col-md-6">  <!--Zorunlu e posta doldurma -->
+                <label for="eposta" class="form-label">E-Posta</label>
+                <input type="email" class="form-control" id="eposta" required>
+            </div>
+            <div class="col-md-6">
+                <div class="form-check">  <!--form-check-inline  yan yana getiriyor-->
+                <input type="radio" name="radioDefault" id="tercih" class="form-check-input">
+                <label for="sikayet" class="form-check-label">Şikayet</label>
+            </div>
+
+                <div class="form-check"> <input type="radio" name="tercih" id="oneri" class="form-check-input" >
+                <label for="oneri" class="form-check-label">Öneri</label>
+            </div>    
+        </div>
+
+        <div class="col-md-12 mb-3">
+            <div class="form-floating"> <!--Açıklma-->
+                <textarea class="form-control" placeholder="Leave a comment here" id="aciklama" rows="5" style="height: 100px"></textarea>
+                <label for="aciklama">Açıklama</label>
+              </div>
+        </div>
+
+        <div class="col-md-12">
+            <label for="sehirler" class="form-label">Şehirler</label>  <!--Açılır menü-->
+            <select id="sehirler" class="form-select">
+              <option selected disabled>Seçiniz</option>  <!--selected seçili olarak geliyor disabled var ama seçilmiyor-->
+              <option >İstanbul</option>
+              <option>Ankara</option>
+              <option>Rize</option>
+              <option>Kastamonu</option>
+              <option>Malatya</option>
+            </select>
+          </div>
+
+          <div class="col-md-12 ">
+            <div class="form-check"><label for="pasta" class="form-label ">Sevdiğiniz Pasta Çeşidi</label>
+            </div>
+            
+            <div class="form-check-inline">
+                <input class="form-check-input" type="checkbox" value="" id="cikolatali">
+                <label class="form-check-label" for="cikolatali">
+                  Çikolatalı Pasta
+                </label>
+   
+                <input class="form-check-input" type="checkbox" value="" id="cilekli">
+                <label class="form-check-label" for="cilekli">
+                  Çilekli Pasta
+                </label>
+
+                <input class="form-check-input" type="checkbox" value="" id="muzlu">
+                <label class="form-check-label" for="muzlu">
+                  Muzlu Pasta
+                </label>
+
+                <input class="form-check-input" type="checkbox" value="" id="profitorol">
+                <label class="form-check-label" for="profitorol">
+                  Profitorol Pasta
+                </label>
+
+                <input class="form-check-input" type="checkbox" value="" id="bomba">
+                <label class="form-check-label" for="bomba">
+                  Bomba Pasta
+                </label>
+            </div>
+              
+          </div>
+
+         <div class="col-md-6">
+            <button type="submit" class="btn btn-success w-100">Gönder</button>  <!--kaydet-->
+         </div>
+
+         <div class="col-md-6">
+            <button type="reset" class="btn btn-success w-100">Temizle</button>  <!--temizle-->
+         </div>
+            
+
+         
+            
+
+          
+           </div>
+
+           
+        </form>
+
+
+
+        <form class="was-validated">
+            <div class="mb-3">
+              <label for="validationTextarea" class="form-label">Textarea</label>
+              <textarea class="form-control" id="validationTextarea" placeholder="Required example textarea" required></textarea>
+              <div class="invalid-feedback">
+                Please enter a message in the textarea.
+              </div>
+            </div>
+          
+            <div class="form-check mb-3">
+              <input type="checkbox" class="form-check-input" id="validationFormCheck1" required>
+              <label class="form-check-label" for="validationFormCheck1">Check this checkbox</label>
+              <div class="invalid-feedback">Example invalid feedback text</div>
+            </div>
+          
+            <div class="form-check">
+              <input type="radio" class="form-check-input" id="validationFormCheck2" name="radio-stacked" required>
+              <label class="form-check-label" for="validationFormCheck2">Toggle this radio</label>
+            </div>
+            <div class="form-check mb-3">
+              <input type="radio" class="form-check-input" id="validationFormCheck3" name="radio-stacked" required>
+              <label class="form-check-label" for="validationFormCheck3">Or toggle this other radio</label>
+              <div class="invalid-feedback">More example invalid feedback text</div>
+            </div>
+          
+            <div class="mb-3">
+              <select class="form-select" required aria-label="select example">
+                <option value="">Open this select menu</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+              </select>
+              <div class="invalid-feedback">Example invalid select feedback</div>
+            </div>
+          
+            <div class="mb-3">
+              <input type="file" class="form-control" aria-label="file example" required>
+              <div class="invalid-feedback">Example invalid form file feedback</div>
+            </div>
+          
+            <div class="mb-3">
+              <button class="btn btn-primary" type="submit" >Submit form</button>
+            </div>
+          </form>
+
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
+  
+
+    <script>
+        
+    </script>
+
+
+</body>
+</html>
